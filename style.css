@@ -1,0 +1,301 @@
+* {
+	outline: none;
+}
+
+html, body{
+    width:100%;
+    height:100%;
+    margin:0px;
+}
+
+a{
+    /*color: rgb(0, 89, 255);*/
+    color:  rgb(0, 0, 0);
+    text-decoration-color: #ebb116;
+  
+    /*text-decoration: none;*/
+
+}
+
+a:hover{
+    /*color: rgb(255, 166, 0);*/
+    color: #ff5c43;
+    text-decoration: none;
+}
+
+a:active{
+    color: #337eff;
+    text-decoration: none;
+}
+
+#filebutton{
+    display: inline-block;
+    margin: auto;
+    background-color: #0065b8;
+    font-family: 'consolas', sans-serif;
+    font-size: 15px;
+    font-weight: lighter;
+    color: white;
+    border: none;
+    border-radius: 0px;
+    padding: 5px 10px;
+    position: relative;
+    text-align: center;
+    /*float: left;*/
+}
+
+#filebutton:hover{
+    display: inline-block;
+    margin: auto;
+    background-color: #005983;
+    font-family: 'consolas', sans-serif;
+    font-size: 15px;
+    font-weight: lighter;
+    color: white;
+    border: none;
+    border-radius: 0px;
+    padding: 5px 10px;
+    position: relative;
+    text-align: center;
+    /*float: left;*/
+}
+
+#filebutton:active{
+    display: inline-block;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    font-family: 'consolas', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 0px;
+    padding: 5px 10px;
+    position: relative;
+    text-align: center;
+    /*float: left;*/
+}
+
+.hidden{
+    opacity: 0;
+    z-index: 1000;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#submitbutton{
+    display: inline-block;
+    margin: auto;
+    background-color: #0065b8;
+    font-family: 'consolas', sans-serif;
+    font-size: 15px;
+    font-weight: lighter;
+    color: white;
+    border: none;
+    border-radius: 0px;
+    padding: 5px 10px;
+}
+
+#submitbutton:hover{
+    background-color: #005983;
+    font-family: 'Consolas', sans-serif;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+}
+
+#submitbutton:active{
+    background-color: rgb(255, 255, 255);
+    font-family: 'Consolas', sans-serif;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    /*border: 3px solid #004768;
+    border-radius: 2px;*/
+    padding: 5px 10px;
+}
+/*
+#submitbutton:disabled, #submitbutton[disabled]{
+    background-color: rgb(131, 131, 131);
+    font-family: 'Consolas', sans-serif;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+}
+*/
+h1{
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Hind', sans-serif;
+    font-weight: lighter;
+    margin: 0%;
+}
+
+h3{
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+    margin: 0%;
+}
+
+h5{
+    color: rgb(255, 0, 0);
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
+    /*font-weight: lighter;*/
+    text-align: center;
+    margin: 0%;
+}
+
+#title{
+    margin-top: 5%;
+    text-align: center;
+}
+
+#antsnet{
+    display: inline-block;
+    margin-left: 3%;
+}
+
+#v0{
+    font-family: 'Consolas', sans-serif;
+    font-size: 25px;
+    display: inline-block;
+}
+
+#subtitle{
+    margin-top: 0px;
+    margin-bottom: 1.5%;
+}
+
+#disclaimer{
+    /*DOESN'T WORK margin-top: 10%;*/
+    width: 50%;
+    margin: auto;
+}
+
+#header{
+    width: 100%;
+}
+
+#content{
+    margin-top: 3%;
+}
+
+#bodycontent{
+    margin-top: 3%;
+    width: 100%;
+}
+
+#img_div{
+    margin: auto;
+    width: 600px;
+}
+
+#explain{
+    margin-top: 5%;
+}
+
+.wrapper {
+    width: 1000px;
+    margin: auto;
+}
+
+#upload_button{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+#upload_form{
+    text-align: center;
+    margin: auto;
+}
+
+#button_spacer{
+    display: inline-block;
+    margin: auto;
+    width: 45%
+}
+
+#bodycontent{
+    height: 500px;
+    background-image: url(./img/PXL_20210629_190730962.jpg);
+    background-size: 100%;
+    background-position: 50%;
+}
+
+#explainbutton{
+    margin: auto;
+    text-align: center;
+}
+
+/*testing*/
+/*
+#header{
+    background-color: antiquewhite;
+}
+
+#title{
+    background-color: #ebb116;
+}
+
+#antsnet{
+    background-color: #5cff33;
+}
+
+#v0{
+    background-color: #ff5c43;
+}
+
+#subtitle{
+    background-color: aqua;
+}
+
+#disclaimer{
+    background-color: aquamarine;
+}
+
+#titlewrapper{
+    background-color: #337eff;
+}
+
+#content{
+    background-color: beige;
+}
+
+#uploader{
+    background-color: rgb(191, 255, 255);
+}
+
+#contentwrapper{
+    background-color: #ff5c43;
+}
+
+#upload_button{
+    background-color: rgb(182, 109, 0);
+}
+
+#filebutton{
+    background-color: rgb(30, 182, 0);
+}
+
+#bodycontent{
+    background-color: aqua;
+}
+
+#explain{
+    background-color: rgb(88, 255, 177);
+}
+
+#explainwrapper{
+    background-color: rgb(236, 255, 127);
+}
+
+#explainbutton{
+    background-color: #ebb116;
+}
+*/
+/*testing*/

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>AntsNet</title>
+    <!link rel="shortcut icon" href="./assets/atomnotxt_favicon.ico">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="header">
+        <div id="titlewrapper" class="wrapper">
+            <div id="title">
+                <h1 id="antsnet">AntsNet</h1>
+                <h1 id="v0">v0</h1>
+            </div>
+            <!--div id="subtitle"><h3>A Convolutional Neural Network Ant Image Processor</h3></div-->
+            <div id="subtitle"><h3>A convolutional neural network ant image processor</h3></div>
+            <div id="disclaimer">
+                <h5>NOTE: AntsNet is currently undergoing development. You may help develop AntsNet by contributing ant images through the 'Contribute to the AntsNet Training Set' section.</h5>
+            </div>
+        </div>
+    </div>
+    <div id="content">
+        <div id="uploader">
+            <div id="contentwrapper" class="wrapper">
+                <div id="upload_button">
+                    <form id="upload_form" class="form">
+                        <div id="filebutton">
+                            choose file
+                            <input type="file" id="upload_file" class="hidden">
+                        </div>
+                        <div id="button_spacer"></div>
+                        <button id="submitbutton" type="submit">process</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="bodycontent">
+            <p></p>
+            <div id="img_div">
+            </div>
+        </div>
+        <!-- COMMENT
+        <div id="explain">
+            <div id="explainwrapper" class="wrapper">
+                <div id="explainbutton">
+                    <a href="explain.html">How AntsNet works</a>
+                </div>
+            </div>
+        </div>
+        /COMMENT -->
+    </div>
+    <div id="footer"></div>
+    <script>
+        const upload_form = document.getElementById("upload_form");
+        const upload_file = document.getElementById("upload_file");
+
+        const cover_img = document.getElementById("img_div");
+
+        upload_form.addEventListener("submit", e => {
+            e.preventDefault();
+            const endpoint = "http://127.0.0.1:5000/infer";
+            const form_data = new FormData();
+
+            form_data.append("file", upload_file.files[0]);
+
+            fetch(endpoint, {
+                method: "post",
+                body: form_data
+            }).then(res => res.json()).then(data => {
+                console.log(data);
+                console.log(data["inference_img"])
+
+                let inf_img = document.createElement("img");
+                inf_img.src = "http://127.0.0.1:5000/" + data["inference_img"];
+                // inf_img.height = '600';
+                // inf_img.width = '1000';
+                inf_img.style.maxHeight = '400px';
+                document.getElementById('img_div').appendChild(inf_img);
+
+            }).catch(console.error)
+        });
+    </script>
+</body>
+
+</html>
