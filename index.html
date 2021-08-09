@@ -61,20 +61,25 @@
 
         upload_form.addEventListener("submit", e => {
             e.preventDefault();
-            const endpoint = "http://127.0.0.1:5000/infer";
+            const endpoint = "https://antsnet-service.o797bsb7nlvso.us-east-2.cs.amazonlightsail.com/infer";
             const form_data = new FormData();
 
             form_data.append("file", upload_file.files[0]);
 
             fetch(endpoint, {
+                mode: "cors",
                 method: "post",
-                body: form_data
+                body: form_data,
+                header: {
+                    'Access-Control-Allow-Origin': '*',
+                    'Content-Type': 'multipart/form-data'
+                }
             }).then(res => res.json()).then(data => {
                 console.log(data);
-                console.log(data["inference_img"])
+                console.log(data["inference_img"]);
 
                 let inf_img = document.createElement("img");
-                inf_img.src = "http://127.0.0.1:5000/" + data["inference_img"];
+                inf_img.src = "https://antsnet-service.o797bsb7nlvso.us-east-2.cs.amazonlightsail.com" + data["inference_img"];
                 // inf_img.height = '600';
                 // inf_img.width = '1000';
                 inf_img.style.maxHeight = '400px';
